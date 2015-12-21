@@ -6,7 +6,7 @@ require("babel-register");
  */
 
 var expect = require('expect.js');
-var Reddit = require('../libs/reddit').default;
+var Reddit = require('../libs/sources/reddit').default;
 var reddit = new Reddit();
 
 function debug(posts) {

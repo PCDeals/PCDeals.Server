@@ -1,6 +1,6 @@
-import google from './images/google'
+import google from '../images/google'
 import fs from 'fs'
-import Cache from '../libs/cache'
+import Cache from '../../libs/cache'
 
 const imageCache = new Cache('images').get();
 
@@ -44,7 +44,7 @@ export default class Source {
     }, opts);
 
     var arg = Object.assign(opts, {q: resolveQuery(q)});
-    var key = JSON.stringify(arg);
+    var key = JSON.stringify(arg).toLowerCase();
 
     console.info(`${q} (${imageCache[key] ? 'cache' : 'cold'})`);
 

@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import Reddit from '../libs/reddit'
+import Reddit from '../libs/sources/reddit'
 
 const route = Router();
 const reddit = new Reddit();

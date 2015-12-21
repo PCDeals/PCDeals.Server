@@ -2,7 +2,7 @@ import {Router} from 'express';
 import Pusher from 'pusher-client'
 import _ from 'underscore';
 import sio from '../message/sio'
-import Reddit from '../libs/reddit'
+import Reddit from '../libs/sources/reddit'
 import * as pusherKeys from '../keys/pusher.json'
 import * as sample from './sample.json'
 import * as gcm from '../message/gcm'

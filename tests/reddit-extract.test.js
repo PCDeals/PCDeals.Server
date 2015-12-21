@@ -7,7 +7,7 @@ require("babel-register");
  */
 
 
-var extract = require('../libs/reddit/extract').default;
+var extract = require('../libs/sources/reddit/extract').default;
 var expect = require('expect.js');
 
 function debug(p) {

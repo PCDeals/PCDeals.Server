@@ -5,7 +5,7 @@ import extract from './extract'
 import async from 'async'
 import {EventEmitter2} from 'eventemitter2'
 import _ from 'underscore'
-import {objExec} from '../utils'
+import {objExec} from '../../utils'
 
 const HOST = 'http://reddit.com/';
 
