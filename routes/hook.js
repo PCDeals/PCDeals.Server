@@ -13,7 +13,7 @@ const gitLog = 'git log --pretty=format:\'{%n  "commit": "%H",%n  "abbreviated_c
 // https://developer.github.com/webhooks/#events
 
 function exec(a) {
-  return shell.exec(a, {silent: true}).output;
+  return shell.exec(a, {silent: false}).output;
 }
 
 function handle(e) {

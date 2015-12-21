@@ -1,6 +1,8 @@
 . ~/.bashrc
 nvm install stable
-cd keys && git pull && cd ..
+cd keys
+git pull
+cd ..
 git pull
 npm install
 pm2 restart all
