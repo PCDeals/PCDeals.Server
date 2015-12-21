@@ -1,0 +1,5 @@
+. ~/.bashrc
+nvm install stable
+cd keys && git pull && cd ..
+git pull
+pm2 restart all
