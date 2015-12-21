@@ -1,4 +1,5 @@
 import fs from 'fs'
+import exitHook from 'exit-hook'
 
 const caches = {};
 
@@ -7,7 +8,7 @@ class Cache {
     this.name = name + '.cache.json';
     this.data = caches[this.name] || this.load();
 
-    process.on('exit', () => this.save);
+    exitHook(() => this.save());
   }
 
   get() {
@@ -28,6 +29,7 @@ class Cache {
 
   load() {
     try {
+      console.log(`Importing cache from ${this.name}`);
       this.data = JSON.parse(fs.readFileSync(this.name)) || {};
     } catch (e) {
       this.data = {};
@@ -37,6 +39,7 @@ class Cache {
   }
 
   save() {
+    console.log(`Exporting cache to ${this.name}`);
     fs.writeFileSync(this.name, JSON.stringify(this.data))
   }
 }
