@@ -1,8 +1,10 @@
-. ~/.bashrc
+source ~/.bashrc
 nvm install stable
 cd keys
+git config credential.helper store
 git pull
 cd ..
+git config credential.helper store
 git pull
 npm install
 pm2 restart all
