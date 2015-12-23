@@ -1,6 +1,6 @@
 import gcm from 'node-gcm'
 import _ from 'underscore'
-import * as gcmKeys from '../keys/gcm.json'
+import gcmKeys from '../keys/gcm.json'
 
 const sender = new gcm.Sender(gcmKeys.serverKey);
 let tokens = [];

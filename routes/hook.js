@@ -1,7 +1,7 @@
 import {Router} from 'express';
 import Hook from 'github-webhook-handler'
 import fs from 'fs'
-import * as githubKeys from '../keys/github.json'
+import githubKeys from '../keys/github.json'
 import events from 'github-webhook-handler/events'
 import shell from 'shelljs'
 
