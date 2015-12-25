@@ -24,7 +24,7 @@ export default class Reddit extends Source {
     opts.subreddit = opts.subreddit ? `r/${opts.subreddit}` : '';
     opts = objExec(opts);
 
-    const url = `${[HOST, opts.subreddit, opts.format].join('/')}?${querystring.stringify(opts)}`;
+    const url = `${[HOST, opts.subreddit, opts.sort, opts.format].join('/')}?${querystring.stringify(opts)}`;
     return request({url, json: true})
       .then(res => res.data.children)
       .then(res => res.map(post=> post.data));

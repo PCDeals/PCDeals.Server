@@ -7,5 +7,6 @@ cd ..
 git config credential.helper store
 git pull origin master
 rm -rf node_modules
+npm cache clear
 npm install
 pm2 restart all
