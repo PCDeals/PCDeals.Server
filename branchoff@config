@@ -1,0 +1,15 @@
+{
+    "startPort": 3000,
+    "endPort": 4000,
+    "uri": "https://github.com/PCDeals/PCDeals.Server",
+    "debug": true,
+    "pm2": {
+        "script": "./bin/www",
+        "exec_mode": "fork",
+        "instances": 1,
+        "max_memory_restart": "200M",
+        "env": {
+            "NODE_ENV": "production"
+        }
+    }
+}
