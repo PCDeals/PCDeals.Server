@@ -1,3 +1,3 @@
 [submodule "keys"]
 	path = keys
-	url = git@github.com:PCDeals/PCDeals.Keys.git
+	url = https://github.com/PCDeals/PCDeals.Keys
