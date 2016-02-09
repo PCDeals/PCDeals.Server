@@ -10,7 +10,6 @@ import sio from './message/sio'
 import BasicRouter from './routes/basic'
 import NotifyRouter from './routes/notify'
 import colors from 'colors'
-import * as BranchOff from 'branch-off'
 
 const app = express();
 const server = http.createServer(app);
@@ -19,8 +18,6 @@ sio.attach(server);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
-app.use('/postreceive', BranchOff.getRouter()); // must be performed before body parser
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
