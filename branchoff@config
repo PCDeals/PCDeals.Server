@@ -1,15 +1,25 @@
 {
-    "startPort": 3000,
-    "endPort": 4000,
-    "uri": "https://github.com/PCDeals/PCDeals.Server",
-    "debug": true,
-    "pm2": {
-        "script": "./bin/www",
-        "exec_mode": "fork",
-        "instances": 1,
-        "max_memory_restart": "200M",
-        "env": {
-            "NODE_ENV": "production"
-        }
+  "start": "node ./bin/www",
+  "preferPort": {
+    "branch": {
+      "master": 3000
     }
+  },
+  "env": {
+    "branch": {
+      "default": {
+        "NODE_ENV": "staging",
+        "EMAIL_REGISTRATION": false
+      }
+    }
+  },
+  "pm2": {
+    "restart_delay": 10000,
+    "watch": false,
+    "min_uptime": "20s",
+    "max_restarts": 3,
+    "script": "./bin/www",
+    "next_gen_js": false,
+    "max_memory_restart": "1G"
+  }
 }

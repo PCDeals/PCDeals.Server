@@ -1,0 +1,7 @@
+# npm cache clear
+# npm install
+
+npm set progress=false
+
+# for default npm installer
+npm --no-color --no-spin --loglevel=error --cache-min 9999999 install --production

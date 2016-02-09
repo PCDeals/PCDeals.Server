@@ -1,4 +1,8 @@
-git submodule init
-git submodule update
-npm cache clear
-npm install
+# git submodule init
+# git submodule update
+# npm cache clear
+# npm install
+
+echo 'triggering ./branchoff@update'
+
+. ./branchoff@update ${1} # pass in mode
