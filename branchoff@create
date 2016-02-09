@@ -1,6 +1,8 @@
 # npm cache clear
 # npm install
 
+git config --global credential.helper store
+
 git submodule init
 git submodule update
 
