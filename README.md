@@ -34,7 +34,7 @@ npm cache clear # if modules need to be downloaded again
 ### Setup
 ```bash
 # general env setup
-sudo apt-get update
+sudo apt-get update # yum
 sudo apt-get -y install build-essential git ruby libpam0g-dev
 sudo gem install sass
 echo "sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 3000" >> ~/.bashrc
