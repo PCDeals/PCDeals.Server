@@ -27,8 +27,12 @@ export default class Reddit extends Source {
 
     const url = `${[HOST, opts.subreddit, opts.sort, opts.format].join('/')}?${querystring.stringify(opts)}`;
     return request({url, json: true})
-        .then(res => res.data.children)
-        .then(res => res.map(post=> post.data));
+        .then(res => res.data)
+        .then(res => { return {
+          after: res.after,
+          before: res.before,
+          data: res.children.map(post => post.data)
+        } });
   }
 
   normalize(posts, opts) {
@@ -52,7 +56,7 @@ export default class Reddit extends Source {
             }
             return callback();
           }, () => resolve(posts));
-    });
+    })
   }
 
   listen(opts, interval) {
