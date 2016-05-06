@@ -7,6 +7,7 @@ import cheerio from 'cheerio'
 
 export default function (opts) {
   return new Promise((resolve, reject)=> {
+
     var q = escape(opts.q);
     var params = '';
 
@@ -38,9 +39,11 @@ export default function (opts) {
       var links = [];
 
       try {
-        links = body.match(/imgres\?imgurl=(.*?)\&amp;imgrefurl=/gm)
+        //links = body.match(/imgres\?imgurl=(.*?)\&amp;imgrefurl=/gm)
+        links = body.match(/"ou":"(.*?)"/gm)
           .map(function (imgurl) {
-            imgurl = imgurl.replace('imgres\?imgurl=', '').replace('&amp;imgrefurl=', '');
+            //imgurl = imgurl.replace('imgres\?imgurl=', '').replace('&amp;imgrefurl=', '');
+            imgurl = imgurl.replace('"ou":', '').replace('"', '').replace('"', '');
             return decodeURIComponent(decodeURIComponent(imgurl));
           });
       } catch (e) {
